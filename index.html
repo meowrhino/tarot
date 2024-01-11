@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tarot log</title>
+    <style>
+        .core {
+            display: flex;
+            font-size: 30px;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="sencilla">
+        <h3 class="question">tirada de ansiedad: curro, tema pisos</h3>
+        <div class="answer">
+            <div class="core">
+                <p class="pasado">11</p>
+                <p class="presente">14</p>
+                <p class="futuro">17</p>
+            </div>
+            <p class="consejo">1</p>
+            <p class="extra">!13</p>
+        </div>
+
+        <article class="sencilla">
+            <h3 class="question">tirada de ansiedad: curro, tema pisos</h3>
+            <div class="answer">
+                <div class="core">
+                    <p class="pasado">11</p>
+                    <p class="presente">14</p>
+                    <p class="futuro">17</p>
+                </div>
+                <p class="consejo">1</p>
+                <p class="extra">!13</p>
+            </div>
+
+            <small class="date">11/01/24 13:44</small>
+            <div class="reading">yo la lei como "has dejado atras algo que es te mueve y ahora tienes que quedarte quieto para reunirte con ello"</div>
+        </article>
+
+        <script>
+            const emojisMajor = [
+                "🤪",
+                "🧙",
+                "🧝‍♀️",
+                "👸",
+                "🤴",
+                "🎅",
+                "💑",
+                "🎠",
+                "🦍",
+                "🐚",
+                "🎡",
+                "⚖️",
+                "🧗‍♂️",
+                "💀",
+                "🧘",
+                "👹",
+                "🗼",
+                "🌟",
+                "🌚",
+                "🌞",
+                "🧑‍⚖️",
+                "🌍"
+            ];
+            const numberOfMajorArcana = emojisMajor.length
+
+            console.log(emojisMajor.lenght);
+
+            function convertToEmoji(string) {
+                if (+string < numberOfMajorArcana) {
+                    for (i = 0; i <= numberOfMajorArcana; i++) {
+                        if (+string == i) {
+                            console.log(emojisMajor[i]);
+                            break
+                        }
+                    }
+                }
+            }
+
+            function getPasados() {
+                var allPasados = document.querySelectorAll('.pasado'),
+                    result = [];
+                for (var i = 0; i < allPasados.length; i++) {
+                    result.push(allPasados[i].textContent);
+                }
+                console.log(result);
+                return result;
+            }
+
+            getPasados();
+            //me gustaría que haya una función que cambie los nombres de las cartas por emojis
+
+            /*
+            TIPOS DE TIRADA REGISTRADA
+            sencilla: 3 cartas (+ consejo/s) suele ser pasado, presente, futuro
+            compleja: 9 cartas, 3 de pasado 3 de presente 3 de futuro, 2 consejos, uno a la izq y otro a la derecha
+            */
+
+        </script>
+</body>
+
+</html>
