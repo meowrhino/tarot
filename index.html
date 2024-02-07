@@ -5,103 +5,120 @@
     <meta charset="UTF-8">
     <title>tarot log</title>
     <style>
+        /*
         .core {
             display: flex;
             font-size: 30px;
             gap: 5px;
-        }
+        }*/
     </style>
 </head>
 
 <body>
+
     <article class="sencilla">
         <h3 class="question">tirada de ansiedad: curro, tema pisos</h3>
         <div class="answer">
-            <div class="core">
+            <!-- <div class="core"> -->
                 <p class="pasado">11</p>
                 <p class="presente">14</p>
                 <p class="futuro">17</p>
-            </div>
+           <!-- </div> -->
             <p class="consejo">1</p>
             <p class="extra">!13</p>
         </div>
 
-        <article class="sencilla">
-            <h3 class="question">tirada de ansiedad: curro, tema pisos</h3>
-            <div class="answer">
-                <div class="core">
-                    <p class="pasado">11</p>
-                    <p class="presente">14</p>
-                    <p class="futuro">17</p>
-                </div>
-                <p class="consejo">1</p>
-                <p class="extra">!13</p>
-            </div>
+        <small class="date">11/01/24 13:44</small>
+        <div class="reading">yo la lei como "has dejado atras algo que es te mueve y ahora tienes que quedarte quieto
+            para reunirte con ello"</div>
+    </article>
 
-            <small class="date">11/01/24 13:44</small>
-            <div class="reading">yo la lei como "has dejado atras algo que es te mueve y ahora tienes que quedarte quieto para reunirte con ello"</div>
-        </article>
+    <article class="compleja">
+        <h3 class="question"> ??? </h3>
+        <div class="answer">
+            <p class="pasado">!7 13 !3</p>
+            <p class="presente">2 14 8</p>
+            <p class="futuro">17 6 !4</p>
 
-        <script>
-            const emojisMajor = [
-                "🤪",
-                "🧙",
-                "🧝‍♀️",
-                "👸",
-                "🤴",
-                "🎅",
-                "💑",
-                "🎠",
-                "🦍",
-                "🐚",
-                "🎡",
-                "⚖️",
-                "🧗‍♂️",
-                "💀",
-                "🧘",
-                "👹",
-                "🗼",
-                "🌟",
-                "🌚",
-                "🌞",
-                "🧑‍⚖️",
-                "🌍"
-            ];
-            const numberOfMajorArcana = emojisMajor.length
+            <p class="consejos">!11 !12</p>
+            <small class="date">30/12/23 13:11</small>
+            <div class="reading">no me acuerdo, pero sé que me decía mucho</div>
+        </div>
+    </article>
 
-            console.log(emojisMajor.lenght);
+    <article class="compleja">
+        <h3 class="question">m4rc</h3>
+        <div class="answer"> 
+            <p class="pasado">!10 3 18</p>
+            <p class="presente">13 14 12</p>
+            <p class="pasado">1 17 7</p>
 
-            function convertToEmoji(string) {
-                if (+string < numberOfMajorArcana) {
-                    for (i = 0; i <= numberOfMajorArcana; i++) {
-                        if (+string == i) {
-                            console.log(emojisMajor[i]);
-                            break
-                        }
+            <p class="consejos">!21 !20</p>
+            <small class="date">28/12/23 13:17</small>
+            <div class="reading">en un momento en el que manuel estaba bastante perdido (rueda de la fortuna) conoce a m4rc, una persona muy influyente en lo emocional (la emperatriz) en la noche (la luna) <br> en el presente la emperatriz ahora es la muerte y manuel lo representa el colgado porque está prendidísimo, la templanza está en medio de estas dos cartas, indicando su relación actual (fluye pero no demasiado) <br> y el futuro no sabemos verlo... <br>fun facts m4rc y manuel comparten luna en escorpio </div>
+        </div>
+    </article>
+
+    <script>
+        const emojisMajor = [
+            "🤪",
+            "🧙",
+            "🧝‍♀️",
+            "👸",
+            "🤴",
+            "🎅",
+            "💑",
+            "🎠",
+            "🦍",
+            "🐚",
+            "🎡",
+            "⚖️",
+            "🧗‍♂️",
+            "💀",
+            "🧘",
+            "👹",
+            "🗼",
+            "🌟",
+            "🌚",
+            "🌞",
+            "🧑‍⚖️",
+            "🌍"
+        ];
+        const numberOfMajorArcana = emojisMajor.length
+
+        console.log(emojisMajor.lenght);
+
+        function convertToEmoji(string) {
+            if (+string < numberOfMajorArcana) {
+                for (i = 0; i <= numberOfMajorArcana; i++) {
+                    if (+string == i) {
+                        console.log(emojisMajor[i]);
+                        break
                     }
                 }
             }
+        }
 
-            function getPasados() {
-                var allPasados = document.querySelectorAll('.pasado'),
-                    result = [];
-                for (var i = 0; i < allPasados.length; i++) {
-                    result.push(allPasados[i].textContent);
-                }
-                console.log(result);
-                return result;
+        function getPasados() {
+            var allPasados = document.querySelectorAll('.pasado'),
+                result = [];
+            for (var i = 0; i < allPasados.length; i++) {
+                result.push(allPasados[i].textContent);
             }
+            console.log(result);
+            return result;
+        }
 
-            getPasados();
-            //me gustaría que haya una función que cambie los nombres de las cartas por emojis
+        getPasados();
+        //me gustaría que haya una función que cambie los nombres de las cartas por emojis
 
-            /*
-            TIPOS DE TIRADA REGISTRADA
-            sencilla: 3 cartas (+ consejo/s) suele ser pasado, presente, futuro
-            compleja: 9 cartas, 3 de pasado 3 de presente 3 de futuro, 2 consejos, uno a la izq y otro a la derecha
-            */
+        /*
+        TIPOS DE TIRADA REGISTRADA
+        sencilla: 3 cartas (+ consejo/s) suele ser pasado, presente, futuro
+        compleja: 9 cartas, 3 de pasado 3 de presente 3 de futuro, 2 consejos, uno a la izq y otro a la derecha
+        */
 
-        </script>
+    </script>
 </body>
 
 </html>
